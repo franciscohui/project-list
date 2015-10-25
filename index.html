@@ -1,4 +1,4 @@
-<html>
+<html ng-app='Project-List'>
 <head>
   <title>Project List</title>
 
@@ -6,22 +6,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
 </head>
-<body>
+<body ng-controller="MainCtrl">
 
   <div class="container"> <!-- to wrap all content in the grid system -->
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h1>Project List</h1>
+        <h1>Projects</h1>
         <ul>
-          <li>
-            <h5><a href="https://github.com/franciscohui/project-list">Project List</a></h5>
-            <p>A static site hosted on CF and versioned on GitHub</p>
+          <li ng-repeat="project in projects">
+            <a href="{{ project.link }}">{{ project.title }}</a><small> {{ project.phase }}</small>
+            <p>{{ project.description}}</p>
           </li>
-        </ul>
+        </ul> <!-- project list -->
+
+        <h3>Ideas</h3>
+        <ul>
+          <li ng-repeat="idea in ideas">
+            <span class="idea-tag">{{ idea.tag }}</span><p>{{ idea.description }}</p>
+          </li>
+        </ul> <!-- idea list -->
       </div> <!-- .col-md-8 -->
     </div> <!-- .row -->
   </div> <!-- .container -->
-
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -31,5 +37,8 @@
 
   <!-- Bootstrap 4 minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  <script src="app.js"></script>
+
 </body>
 </html>
