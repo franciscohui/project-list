@@ -1,12 +1,10 @@
 <html ng-app='Project-List'>
 <head>
   <title>Project List</title>
-
   <!-- Bootstrap 4 minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-controller="MainCtrl">
 
@@ -16,7 +14,8 @@
         <h1>Projects</h1>
         <ul>
           <li ng-repeat="project in projects">
-            <a href="{{ project.link }}">{{ project.title }}</a><small> {{ project.phase }}</small>
+            <a href="{{ project.link }}">{{ project.title }}</a>
+            <span class="tag"> {{ project.phase }}</span>
             <p>{{ project.description}}</p>
           </li>
         </ul> <!-- project list -->
@@ -24,7 +23,8 @@
         <h3>Ideas</h3>
         <ul>
           <li ng-repeat="idea in ideas">
-            <span class="idea-tag">{{ idea.tag }}</span><p>{{ idea.description }}</p>
+            <span class="tag">{{ idea.tag }}</span>
+            <p>{{ idea.description }}</p>
           </li>
         </ul> <!-- idea list -->
       </div> <!-- .col-md-8 -->

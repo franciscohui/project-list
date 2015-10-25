@@ -1,0 +1,12 @@
+ul{
+  list-style-type: none;
+  padding: 0 0 0 2em;
+}
+li{
+  margin-bottom: 1.7em;
+}
+.tag{
+  color: #9AA6AF;
+  text-transform: uppercase;
+  font-size: 9px;
+}
